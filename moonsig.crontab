@@ -1,0 +1,4 @@
+# m h  dom mon dow   command
+MAILTO=neilk@brevity.org
+00 */6 * * * /home/neilk/bin/sig neilk@brevity.org   > /home/neilk/signature.neilk@brevity.org
+00 */6 * * * /home/neilk/bin/sig neilk@wikimedia.org > /home/neilk/signature.neilk@wikimedia.org

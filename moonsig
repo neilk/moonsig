@@ -1,0 +1,43 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+use Astro::MoonPhase qw/phase phasehunt/;
+
+my $address = $ARGV[0];
+
+=for example
+my @phases = phasehunt();
+
+my @phaseFract = map { (phase($_))[0] } @phases; 
+
+print "New Moon      = ", $phaseFract[0] . " " . scalar(localtime($phases[0])), "\n";
+print "First quarter = ", $phaseFract[1] . " " . scalar(localtime($phases[1])), "\n";
+print "Full moon     = ", $phaseFract[2] . " " . scalar(localtime($phases[2])), "\n";
+print "Last quarter  = ", $phaseFract[3] . " " . scalar(localtime($phases[3])), "\n";
+print "New Moon      = ", $phaseFract[4] . " " . scalar(localtime($phases[4])), "\n";
+=cut
+
+my ($phase, @dummy) = phase();
+my $display = " * ";
+
+if ($phase >= 0.95 or $phase < 0.05) {
+  $display = "   ";
+} elsif ($phase >= 0.05 and $phase < 0.25) {
+  $display = "  )";
+} elsif ($phase >= 0.25 and $phase < 0.45) {
+  $display = " |)";
+} elsif ($phase >= 0.45 and $phase < 0.55) {
+  $display = "( )";
+} elsif ($phase >= 0.55 and $phase < 0.75) {
+  $display = "(| ";
+} elsif ($phase >= 0.75 and $phase < 0.95) {
+  $display = "(  ";
+} else {
+  die "impossible? phase = $phase";
+}
+
+print <<EOF;
+-- 
+Neil Kandalgaonkar $display <$address>
+EOF
