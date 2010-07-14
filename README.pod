@@ -1,0 +1,17 @@
+=pod
+
+=head1 Name
+
+moonsig - a continually changing signature based on the phase of the moon
+
+=head2 License
+
+Copyright 2010 Neil Kandalgaonkar.
+
+This work is licensed under the terms of the GNU General Public License, 
+version 2 or later. 
+(see http://www.fsf.org/licensing/licenses/gpl.html). 
+Derivative works and later versions of the code must be free software 
+licensed under the same or a compatible license.
+
+=cut
