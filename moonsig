@@ -1,22 +1,28 @@
 #!/usr/bin/perl -w
 
+=pod
+
+=head1 Name
+
+moonsig - a continually changing signature based on the phase of the moon
+
+=head2 License
+
+Copyright 2010 Neil Kandalgaonkar.
+
+This work is licensed under the terms of the GNU General Public License, 
+version 2 or later. 
+(see http://www.fsf.org/licensing/licenses/gpl.html). 
+Derivative works and later versions of the code must be free software 
+licensed under the same or a compatible license.
+
+=cut
+
 use strict;
 
-use Astro::MoonPhase qw/phase phasehunt/;
+use Astro::MoonPhase qw/phase/;
 
 my $address = $ARGV[0];
-
-=for example
-my @phases = phasehunt();
-
-my @phaseFract = map { (phase($_))[0] } @phases; 
-
-print "New Moon      = ", $phaseFract[0] . " " . scalar(localtime($phases[0])), "\n";
-print "First quarter = ", $phaseFract[1] . " " . scalar(localtime($phases[1])), "\n";
-print "Full moon     = ", $phaseFract[2] . " " . scalar(localtime($phases[2])), "\n";
-print "Last quarter  = ", $phaseFract[3] . " " . scalar(localtime($phases[3])), "\n";
-print "New Moon      = ", $phaseFract[4] . " " . scalar(localtime($phases[4])), "\n";
-=cut
 
 my ($phase, @dummy) = phase();
 my $display = " * ";
