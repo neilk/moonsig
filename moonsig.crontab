@@ -1,5 +1,5 @@
 # m h  dom mon dow   command
 MAILTO=neilk@brevity.org
-HOME=/home/neilk
-00 */6 * * * $HOME/bin/sig neilk@brevity.org   > $HOME/signature.neilk@brevity.org
-00 */6 * * * $HOME/bin/sig neilk@wikimedia.org > $HOME/signature.neilk@wikimedia.org
+PROJECTS=...
+00 */6 * * * $PROJECTS/moonsig/moonsig neilk@brevity.org   > $HOME/signature.neilk@brevity.org
+00 */6 * * * $PROJECTS/moonsig/moonsig neilk@neilk.net     > $HOME/signature.neilk@neilk.net
